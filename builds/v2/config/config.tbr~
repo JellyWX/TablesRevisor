@@ -1,0 +1,6 @@
+Saving (Should scores be saved to a file? (bool))
+True
+SmoothDivisions (Should division sums be smoothed to prevent decimals?(only works in '/', not mix (bool))
+True
+DisplayAnswer (Should answer be printed after a failed sum? (bool))
+True
