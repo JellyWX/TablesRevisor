@@ -176,7 +176,7 @@ def configuration(x):
   return bool(g);
 
 def score_write(t, filename):
-  f = open('scores/' + filename + '.tbr', 'a')
+  f = open('scores/' + filename + '.tbs', 'a')
   if configuration(2) == True:
     f.write('\n' + str(t))
     x = input(str('Scores saved. Press ENTER to exit.'))
