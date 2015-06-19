@@ -168,7 +168,10 @@ def calc(t):
         score_write(count, 'scoresDivide')
       else:
         score_write(count, 'scores' + str(t)) 
-
+def configuration_int(x)
+  f = open('config/config.tbr', 'r') 
+  p = f.readline(x)
+  return int(g);
 def configuration(x):
   f = open('config/config.tbr', 'r') 
   p = f.readline(x)
