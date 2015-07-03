@@ -1,20 +1,19 @@
 import random
 import sys
 
+points_earned = configuration_int(2)
+points_lost = configuration_int(4)
+
 def main():
     operation = str(input('Choose the operation. Options: \n * (multiply)\n / (divide)\n + (addition)\n - (subtract)\n MIX (random)\n ** (powers)\n > '))
     if operation == 'MIX':
-      rand()
+      rand(points_earned)
     elif operation == '**':
-      power()
+      power(points_earned)
     else:
-      
-      calc(operation)
-      #except:
-       # print('A fatal error has occured!')
-        
-
-def power():
+      calc(operation, points_earned)
+     
+def power(y):
   count = int(0)
   correct = 'right'
   try:
@@ -37,7 +36,7 @@ def power():
       
     if answer == num1**p:
       correct = 'right'
-      count = count + 1
+      count += y
       
       
     elif answer != num1**p:
@@ -55,7 +54,7 @@ def power():
 
       
 
-def rand():
+def rand(y):
   count = int(0)
   correct = 'right'
   try:
@@ -103,7 +102,7 @@ def rand():
  
     if answer == func(operation, num1, num2, ans):
       correct = 'right'
-      count += 1
+      count += y
       
       
     elif answer != func(operation, num1, num2, ans):
@@ -119,7 +118,7 @@ def rand():
       score_write(count, 'scores_mix')
 
 
-def calc(t):
+def calc(t, y):
   count = int(0)
   correct = 'right'
   try:
@@ -151,7 +150,7 @@ def calc(t):
     
     if answer == res:
       correct = 'right'
-      count += 1
+      count += y
       
     
     elif answer != res:
