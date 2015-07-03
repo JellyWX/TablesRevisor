@@ -171,7 +171,7 @@ def calc(t):
 def configuration_int(x)
   f = open('config/config.tbr', 'r') 
   p = f.readline(x)
-  return int(g);
+  return int(p);
 def configuration(x):
   f = open('config/config.tbr', 'r') 
   p = f.readline(x)
