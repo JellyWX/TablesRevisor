@@ -1,6 +1,10 @@
-Saving (Should scores be saved to a file? (bool))
+Saving (Should scores be saved to a file? (bool)):
 False
-SmoothDivisions (Should division sums be smoothed to prevent decimals?(only works in '/', not mix (bool))
+SmoothDivisions (Should division sums be smoothed to prevent decimals?(only works in '/', not mix (bool)):
 True
-DisplayAnswer (Should answer be printed after a failed sum? (bool))
+DisplayAnswer (Should answer be printed after a failed sum? (bool)):
 True
+PointsScored (How many points to score on successful answer (int)):
+1
+PointsLost(How many points to lose on question skip (int)):
+1

@@ -1,0 +1,22 @@
+package com.jude.JavaPort.main.gui;
+
+import javax.swing.JFrame;
+
+public class JGui {
+	
+	
+	public static void main(String args[]) {
+		JFrame frame = new JFrame("Test");
+		frame.setTitle("Test");
+		frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+		frame.setSize(400, 350);
+		frame.setResizable(true);
+		frame.setVisible(true);
+		
+		
+		
+		
+	}
+
+
+}

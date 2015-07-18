@@ -1,0 +1,39 @@
+package com.jude.JavaPort.main.gui;
+
+import java.awt.BorderLayout;
+import java.awt.Dimension;
+import java.awt.FlowLayout;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.SwingConstants;
+
+public class JGui {
+	
+	
+	public static void main(String args[]) {
+		
+		
+		JFrame frame = new JFrame();
+		frame.setTitle("Test");
+		frame.setLayout(new FlowLayout());
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setSize(800, 600);
+		frame.setResizable(true);
+		
+		JLabel textLabel = new JLabel();
+		textLabel.setText("AMAZING");
+		textLabel.setToolTipText("That's me");
+		textLabel.setPreferredSize(new Dimension(200,100));
+		
+		frame.setLocationRelativeTo(null);
+
+		frame.setVisible(true);
+		frame.getContentPane().add(textLabel, BorderLayout.CENTER);
+		
+		
+		
+	}
+
+
+}

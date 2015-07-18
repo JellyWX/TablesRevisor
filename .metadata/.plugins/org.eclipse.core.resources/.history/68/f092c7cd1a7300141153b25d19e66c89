@@ -1,0 +1,52 @@
+package com.jude.JavaPort.main.gui;
+
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.FlowLayout;
+
+import javax.swing.BorderFactory;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.SwingConstants;
+import javax.swing.border.Border;
+
+public class JGui {
+	
+	
+	public static void main(String args[]) {
+		
+		
+		JFrame frame = new JFrame();
+		frame.setTitle("Test");
+		frame.setLayout(new FlowLayout());
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setSize(800, 600);
+		frame.setResizable(true);
+		frame.getContentPane().setBackground(Color.BLUE);
+		
+		JLabel textLabel = new JLabel("AMAZING", SwingConstants.CENTER);
+		textLabel.setText("AMAZING");
+		textLabel.setToolTipText("That's me");
+		textLabel.setPreferredSize(new Dimension(200,100));
+		frame.add(textLabel);
+		
+		
+		
+		JLabel label= new JLabel("asdf");
+	    Border border = BorderFactory.createLineBorder(Color.WHITE);
+	    label.setBorder(border);
+	    label.setPreferredSize(new Dimension(35, 20));
+	    frame.add(label);
+		
+		
+		frame.setLocationRelativeTo(null);
+		frame.setVisible(true);
+		
+		frame.getContentPane().add(textLabel);
+		
+		
+		
+	}
+
+
+}

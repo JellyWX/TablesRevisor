@@ -1,20 +1,19 @@
 import random
 import sys
 
-def main():
-    operation = str(input('Choose the operation. Options: \n * (multiply)\n / (divide)\n + (addition)\n - (subtract)\n MIX (random)\n ** (powers)\n > '))
-    if operation == 'MIX':
-      rand()
-    elif operation == '**':
-      power()
-    else:
-      
-      calc(operation)
-      #except:
-       # print('A fatal error has occured!')
-        
 
-def power():
+def main():
+  points_earned = configuration_int(8)
+  points_lost = configuration_int(10)
+  operation = str(input('Choose the operation. Options: \n * (multiply)\n / (divide)\n + (addition)\n - (subtract)\n MIX (random)\n ** (powers)\n > '))
+  if operation == 'MIX':
+    rand(points_earned, points_lost)
+  elif operation == '**':
+    power(points_earned)
+  else:
+    calc(operation, points_earned, points_lost)
+     
+def power(y, z):
   count = int(0)
   correct = 'right'
   try:
@@ -37,7 +36,7 @@ def power():
       
     if answer == num1**p:
       correct = 'right'
-      count = count + 1
+      count += y
       
       
     elif answer != num1**p:
@@ -55,7 +54,7 @@ def power():
 
       
 
-def rand():
+def rand(y, z):
   count = int(0)
   correct = 'right'
   try:
@@ -92,7 +91,7 @@ def rand():
         answer = int(input('What is ' + str(ans) + str(operation1) + str(num2) + '? > '))
       except:
         print("Uh oh! Something went wrong! Please type in only integers.")
-        count -= 1
+        count -= z
         continue;
     else:
       try:
@@ -103,7 +102,7 @@ def rand():
  
     if answer == func(operation, num1, num2, ans):
       correct = 'right'
-      count += 1
+      count += y
       
       
     elif answer != func(operation, num1, num2, ans):
@@ -119,7 +118,7 @@ def rand():
       score_write(count, 'scores_mix')
 
 
-def calc(t):
+def calc(t, y, z):
   count = int(0)
   correct = 'right'
   try:
@@ -138,7 +137,7 @@ def calc(t):
         answer = int(input('What is ' + str(num1) + str(t) + str(num2) + '? '))
     except:
       print("Uh oh! Something went wrong! Please type in only integers.")
-      count -= 1
+      count -= z
       continue;
     
     if t == '/':
@@ -151,7 +150,7 @@ def calc(t):
     
     if answer == res:
       correct = 'right'
-      count += 1
+      count += y
       
     
     elif answer != res:
@@ -165,22 +164,42 @@ def calc(t):
       if configuration(6) == True:
         print(str(res) + ' : ' + str(num1) + ' : ' + str(num2))
       if t == '/':
-        score_write(count, 'scoresDivide')
+        score_write(count, 'scores_divide')
       else:
         score_write(count, 'scores' + str(t)) 
 
-def configuration(x):
-  f = open('config/config.tbr', 'r') 
-  p = f.readline(x)
-  g = p.strip()
-  return bool(g);
-
+        
 def score_write(t, filename):
-  f = open('scores/' + filename, 'a')
+  f = open('scores/' + filename + '.tbs', 'a')
   if configuration(2) == True:
     f.write('\n' + str(t))
     x = input(str('Scores saved. Press ENTER to exit.'))
   else:
     print('Score saving disabled. You can enable it in the config')
+
+def configuration_int(x):
+  b = file_read(x, 'config/config.tbr')
+  return int(b)
+  
+def configuration(x):
+  b = file_read(x, 'config/config.tbr')
+  return bool(b)
+  #f = open('config/config.tbr', 'r') 
+  #p = f.readline(x)
+  #g = p.strip()
+  #return bool(g);
+  
+def file_read(x, y):
+  f = open(y, 'r')
+  i = 1
+  for line in f:
+    if i == x:
+	    l = line
+    i+=1
+  return l
+  f.close()
+  
+
+
 
 main()
